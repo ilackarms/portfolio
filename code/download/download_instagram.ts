@@ -88,16 +88,21 @@ interface ImageData {
 }
 
 function getImageData(comments: any[]): ImageData {
+    console.log("comments: ", comments.length);
     for (let comment of comments) {
         let data: ImageData;
         try {
+            // console.log("comments: ", comment.text);
             data = YAML.parse(comment.text)
         } catch (e) {
+            // console.log("caught");
             continue
         }
-        if (data.title != "") {
+        if (data.title != "" && data.title != undefined) {
+            // console.log("returned", data.title);
             return data
         }
+            // console.log("continue");
     }
     return null
 }

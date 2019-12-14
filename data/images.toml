@@ -14,3 +14,31 @@ thumb = "./gazer_thumb.jpg"
 title = "gazer"
 materials = "acrylic on canvas"
 size = "18x24"
+
+[[items]]
+image = "./spring.jpg"
+thumb = "./spring_thumb.jpg"
+title = "spring"
+materials = "acrylic and water on paper"
+size = "9x12"
+
+[[items]]
+image = "./stranger.jpg"
+thumb = "./stranger_thumb.jpg"
+title = "stranger"
+materials = "charcoal on paper"
+size = "9x12"
+
+[[items]]
+image = "./phoenix.jpg"
+thumb = "./phoenix_thumb.jpg"
+title = "phoenix"
+materials = "acrylic on canvas"
+size = "8x8"
+
+[[items]]
+image = "./earth.jpg"
+thumb = "./earth_thumb.jpg"
+title = "earth"
+materials = "acrylic on canvas panel"
+size = "18x24"

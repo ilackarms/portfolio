@@ -124,18 +124,23 @@ ig.state.proxyUrl = process.env.IG_PROXY;
     });
 }); })();
 function getImageData(comments) {
+    console.log("comments: ", comments.length);
     for (var _i = 0, comments_1 = comments; _i < comments_1.length; _i++) {
         var comment = comments_1[_i];
         var data = void 0;
         try {
+            // console.log("comments: ", comment.text);
             data = YAML.parse(comment.text);
         }
         catch (e) {
+            // console.log("caught");
             continue;
         }
-        if (data.title != "") {
+        if (data.title != "" && data.title != undefined) {
+            // console.log("returned", data.title);
             return data;
         }
+        // console.log("continue");
     }
     return null;
 }
