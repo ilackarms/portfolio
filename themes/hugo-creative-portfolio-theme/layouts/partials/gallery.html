@@ -5,8 +5,8 @@
         <ul id="og-grid" class="og-grid">
             {{ range $item := $.Site.Data.images.items }}
                 <li>
-                    <a data-largesrc="{{$item.image}}" data-title="{{$item.title}}" data-description="{{$item.description }}" data-buttontext="{{$item.buttontext}}">
-                        <img src="{{$item.thumb}}" alt="{{$item.alt}}"/>
+                    <a data-largesrc="{{$item.image}}" data-title="{{$item.title}}" data-description="materials: {{$item.materials}}<br>size: {{$item.size}}" data-buttontext="{{$item.buttontext}}">
+                        <img src="{{$item.thumb}}" alt="{{$item.title}}"/>
                     </a>
                 </li>
             {{ end }}
@@ -14,4 +14,3 @@
         {{ partial "footer.html" . }}
     </div>
 </div>
-s

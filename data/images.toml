@@ -2,15 +2,15 @@
 title = "Gallery"
 
 [[items]]
-image = "artwork/flume.jpg"
-thumb = "artwork/flume_thumb.jpg"
+image = "./flume.jpg"
+thumb = "./flume_thumb.jpg"
 title = "flume"
 materials = "acrylic on canvas panel"
 size = "9x12"
 
 [[items]]
-image = "artwork/gazer.jpg"
-thumb = "artwork/gazer_thumb.jpg"
+image = "./gazer.jpg"
+thumb = "./gazer_thumb.jpg"
 title = "gazer"
 materials = "acrylic on canvas"
 size = "18x24"

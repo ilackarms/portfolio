@@ -62,6 +62,9 @@ ig.state.proxyUrl = process.env.IG_PROXY;
 title = "Gallery"
 `;
 
+    // temp fix:
+    dir = ".";
+
     for (let image of images) {
         tomlFile +=
             `
