@@ -9,3 +9,6 @@ serve:
 ig-sync:
 	tsc code/download/download_instagram.ts && \
 	node code/download/download_instagram.js artwork
+
+publish:
+	./deploy.sh
