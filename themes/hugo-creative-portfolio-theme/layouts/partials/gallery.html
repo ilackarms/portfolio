@@ -1,11 +1,12 @@
 <div class="col-xs-12 col-sm-8 col-md-9 content-column">
+
     {{ partial "header.html" . }}
     <div class="main">
         <ul id="og-grid" class="og-grid">
-            {{ range $.Site.Data.items.items }}
+            {{ range $item := $.Site.Data.images.items }}
                 <li>
-                    <a data-largesrc="{{.image}}" data-title="{{.title}}" data-description="{{.description }}" data-buttontext="{{.buttontext}}">
-                        <img src="{{.thumb}}" alt="{{.alt}}"/>
+                    <a data-largesrc="{{$item.image}}" data-title="{{$item.title}}" data-description="{{$item.description }}" data-buttontext="{{$item.buttontext}}">
+                        <img src="{{$item.thumb}}" alt="{{$item.alt}}"/>
                     </a>
                 </li>
             {{ end }}
@@ -13,3 +14,4 @@
         {{ partial "footer.html" . }}
     </div>
 </div>
+s

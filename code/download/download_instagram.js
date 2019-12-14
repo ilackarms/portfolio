@@ -48,7 +48,7 @@ ig.state.generateDevice(process.env.IG_USERNAME);
 // Optionally you can setup proxy url
 ig.state.proxyUrl = process.env.IG_PROXY;
 (function () { return __awaiter(void 0, void 0, void 0, function () {
-    var images, dir, loggedInUser, userFeed, myPostsFirstPage, _i, myPostsFirstPage_1, item, info, post, data, imgUrl, tomlFile, _a, images_1, image;
+    var images, dir, loggedInUser, userFeed, myPostsFirstPage, _i, myPostsFirstPage_1, item, info, post, data, tomlFile, _a, images_1, image;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
@@ -83,7 +83,7 @@ ig.state.proxyUrl = process.env.IG_PROXY;
                 _i = 0, myPostsFirstPage_1 = myPostsFirstPage;
                 _b.label = 4;
             case 4:
-                if (!(_i < myPostsFirstPage_1.length)) return [3 /*break*/, 8];
+                if (!(_i < myPostsFirstPage_1.length)) return [3 /*break*/, 9];
                 item = myPostsFirstPage_1[_i];
                 return [4 /*yield*/, ig.media.info(item.id)];
             case 5:
@@ -91,28 +91,32 @@ ig.state.proxyUrl = process.env.IG_PROXY;
                 post = info.items[0];
                 data = getImageData(post.preview_comments);
                 if (data == null || typeof data === "string") {
-                    return [3 /*break*/, 7];
+                    return [3 /*break*/, 8];
                 }
                 console.log("data:", data);
-                imgUrl = post.image_versions2.candidates[0].url;
-                return [4 /*yield*/, wget(imgUrl, {
-                        output: dir + "/" + data.title + ".jpg"
+                return [4 /*yield*/, wget(post.image_versions2.candidates[0].url, {
+                        output: "static/" + dir + "/" + data.title + ".jpg"
                     })];
             case 6:
                 _b.sent();
-                images.push(data);
-                _b.label = 7;
+                return [4 /*yield*/, wget(post.image_versions2.candidates[1].url, {
+                        output: "static/" + dir + "/" + data.title + "_thumb.jpg"
+                    })];
             case 7:
+                _b.sent();
+                images.push(data);
+                _b.label = 8;
+            case 8:
                 _i++;
                 return [3 /*break*/, 4];
-            case 8:
+            case 9:
                 tomlFile = "[[params]]\ntitle = \"Gallery\"\n";
                 for (_a = 0, images_1 = images; _a < images_1.length; _a++) {
                     image = images_1[_a];
                     tomlFile +=
-                        "\n[[items]]\nimage = \"artwork/drawings/full/" + image.title + ".jpg\"\nthumb = \"artwork/drawings/thumbs/" + image.title + ".jpg\"\ntitle = \"" + image.title + "\"\nmaterials = \"" + image.materials + "\"\nsize = \"" + image.size + "\"\n";
+                        "\n[[items]]\nimage = \"" + dir + "/" + image.title + ".jpg\"\nthumb = \"" + dir + "/" + image.title + "_thumb.jpg\"\ntitle = \"" + image.title + "\"\nmaterials = \"" + image.materials + "\"\nsize = \"" + image.size + "\"\n";
                 }
-                fs.writeFileSync("images.toml", tomlFile);
+                fs.writeFileSync("data/images.toml", tomlFile);
                 return [2 /*return*/];
         }
     });

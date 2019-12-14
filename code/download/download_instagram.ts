@@ -48,11 +48,11 @@ ig.state.proxyUrl = process.env.IG_PROXY;
         console.log("data:", data);
 
         await wget(post.image_versions2.candidates[0].url, {
-            output: dir + data.title + ".jpg"
+            output: "static/" + dir + "/" + data.title + ".jpg"
         });
 
         await wget(post.image_versions2.candidates[1].url, {
-            output: dir + data.title + "_thumb.jpg"
+            output: "static/" + dir + "/" + data.title + "_thumb.jpg"
         });
 
         images.push(data)
@@ -74,7 +74,7 @@ size = "` + image.size + `"
 `
     }
 
-    fs.writeFileSync("images.toml", tomlFile)
+    fs.writeFileSync("data/images.toml", tomlFile)
 
 })();
 
