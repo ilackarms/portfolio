@@ -6,6 +6,6 @@ themes:
 serve:
 	hugo server -D
 
-sync-ig:
+ig-sync:
 	tsc code/download/download_instagram.ts && \
 	node code/download/download_instagram.js artwork

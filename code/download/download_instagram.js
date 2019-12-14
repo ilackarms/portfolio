@@ -111,6 +111,8 @@ ig.state.proxyUrl = process.env.IG_PROXY;
                 return [3 /*break*/, 4];
             case 9:
                 tomlFile = "[[params]]\ntitle = \"Gallery\"\n";
+                // temp fix:
+                dir = ".";
                 for (_a = 0, images_1 = images; _a < images_1.length; _a++) {
                     image = images_1[_a];
                     tomlFile +=

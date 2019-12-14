@@ -14,8 +14,8 @@ googleAnalytics = "UA-93692420-2"
   description = "Artwork and Software by Scott Weiss (ilackarms)."
   copyright = "&copy;2019 Scott Weiss"
   sidebarAbout = [
-    "I am a software engineer and painter. My work is inspired by <a href=\"https://en.wikipedia.org/wiki/Food_of_the_gods\">shamanism</a> and <a href=\"https://en.wikipedia.org/wiki/The_Perennial_Philosophy\">the perennial philosophy</a>",
-    "Originally from Long Island, NY. Currently based in Boston."
+    "Exploring the hallways of always.",
+    "I code, I paint, and I complain. Originally from Long Island, NY, I'm currently based in Boston."
   ]
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a
