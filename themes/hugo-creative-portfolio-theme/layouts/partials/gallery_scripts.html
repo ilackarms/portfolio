@@ -286,7 +286,7 @@
 						if( $item ) {
 							this.$item = $item;
 						}
-						
+
 						if( current !== -1 ) {
 							var $currentItem = $items.eq( current );
 							$currentItem.removeClass( 'og-expanded' );
@@ -302,7 +302,7 @@
 								largesrc : $itemEl.data( 'largesrc' ),
 								title : $itemEl.data( 'title' ),
 								description : $itemEl.data( 'description' ),
-								buttontext : $itemEl.data( 'buttontext' )
+								buttontext : $itemEl.data( 'buttontext' ) + "a b c"
 							};
 
 						this.$title.html( eldata.title );
@@ -319,14 +319,14 @@
 						}
 
 						var self = this;
-						
+
 						if( typeof self.$largeImg != 'undefined' ) {
 							self.$largeImg.remove();
 						}
 
-						if( self.$fullimage.is( ':visible' ) ) {
+						// if( self.$fullimage.is( ':visible' ) ) {
 							this.$loading.show();
-							
+
 							$( '<img/>' ).load( function() {
 								var $img = $( this );
 								if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
@@ -335,13 +335,13 @@
 									self.$largeImg = $img.fadeIn( 350 );
 									self.$fullimage.append( self.$largeImg );
 								}
-							} ).attr( 'src', eldata.largesrc );	
-						}
+							} ).attr( 'src', eldata.largesrc );
+						// }
 
 					},
 					open : function() {
 
-						setTimeout( $.proxy( function() {	
+						setTimeout( $.proxy( function() {
 							this.setHeights();
 							this.positionPreview();
 						}, this ), 25 );
@@ -372,7 +372,7 @@
 							}
 
 						}, this ), 25 );
-						
+
 						return false;
 
 					},
@@ -389,9 +389,9 @@
 						this.height = heightPreview;
 						this.itemHeight = itemHeight;
 
+						console.log(this);
 					},
 					setHeights : function() {
-
 						var self = this,
 							onEndFn = function() {
 								if( support ) {
