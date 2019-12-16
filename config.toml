@@ -15,7 +15,7 @@ googleAnalytics = "UA-93692420-2"
   copyright = "&copy;2019 Scott Weiss"
   sidebarAbout = [
     "Exploring the hallways of always.",
-    "I code, I paint, and I complain. Originally from Long Island, NY, I'm currently based in Boston."
+    "I code, I paint, and I complain. Originally from Long Island, NY. Currently based in Boston."
   ]
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a
