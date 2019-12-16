@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 <head>{{ partial "head.html" . }}</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
-  <div id="all">
-      <div class="container-fluid">
-          <div class="row row-offcanvas row-offcanvas-left">
-              {{ partial "sidebar.html" . }}
-              {{ block "main" . }}
-              {{ end }}
-          </div>
-      </div>
-  </div>
-  {{ partial "scripts.html" . }}
-  {{ partial "gallery_scripts.html" . }}
+<div id="all">
+    <div class="container-fluid">
+        <div class="row row-offcanvas row-offcanvas-left">
+            <div>
+                {{ partial "sidebar.html" . }}
+            </div>
+            <div id="content">
+                {{ block "main" . }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ partial "scripts.html" . }}
+{{ partial "gallery_scripts.html" . }}
 </body>
 </html>

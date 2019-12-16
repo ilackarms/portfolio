@@ -326,6 +326,7 @@
 
 						if( self.$fullimage.is( ':visible' ) ) {
 							this.$loading.show();
+							
 							$( '<img/>' ).load( function() {
 								var $img = $( this );
 								if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {

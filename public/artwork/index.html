@@ -330,7 +330,7 @@ if (!doNotTrack) {
 					};
 
 				function init( config ) {
-					
+
 					settings = $.extend( true, {}, settings, config );
 
 					$grid.imagesLoaded( function() {
@@ -370,11 +370,11 @@ if (!doNotTrack) {
 				}
 
 				function initEvents() {
-					
+
 					initItemsEvents( $items );
-					
+
 					$window.on( 'debouncedresize', function() {
-						
+
 						scrollExtra = 0;
 						previewPos = -1;
 						saveItemInfo();
@@ -424,7 +424,7 @@ if (!doNotTrack) {
 							preview.update( $item );
 							return false;
 						}
-						
+
 					}
 
 					previewPos = position;
@@ -468,7 +468,7 @@ if (!doNotTrack) {
 						if( $item ) {
 							this.$item = $item;
 						}
-						
+
 						if( current !== -1 ) {
 							var $currentItem = $items.eq( current );
 							$currentItem.removeClass( 'og-expanded' );
@@ -501,7 +501,7 @@ if (!doNotTrack) {
 						}
 
 						var self = this;
-						
+
 						if( typeof self.$largeImg != 'undefined' ) {
 							self.$largeImg.remove();
 						}
@@ -516,13 +516,13 @@ if (!doNotTrack) {
 									self.$largeImg = $img.fadeIn( 350 );
 									self.$fullimage.append( self.$largeImg );
 								}
-							} ).attr( 'src', eldata.largesrc );	
+							} ).attr( 'src', eldata.largesrc );
 						}
 
 					},
 					open : function() {
 
-						setTimeout( $.proxy( function() {	
+						setTimeout( $.proxy( function() {
 							this.setHeights();
 							this.positionPreview();
 						}, this ), 25 );
@@ -553,7 +553,7 @@ if (!doNotTrack) {
 							}
 
 						}, this ), 25 );
-						
+
 						return false;
 
 					},
@@ -595,7 +595,7 @@ if (!doNotTrack) {
 						var position = this.$item.data( 'offsetTop' ),
 							previewOffsetT = this.$previewEl.offset().top - scrollExtra,
 							scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
-						
+
 						$body.animate( { scrollTop : scrollVal }, settings.speed );
 
 					},
@@ -608,7 +608,7 @@ if (!doNotTrack) {
 					}
 				}
 
-				return { 
+				return {
 					init : init,
 					addItems : addItems
 				};
