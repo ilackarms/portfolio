@@ -121,50 +121,43 @@ materials = "acrylic on illustration board"
 size = "9x12"
 
 [[items]]
-image = "./ eldritch.jpg"
-thumb = "./ eldritch_thumb.jpg"
-title = " eldritch"
+image = "./eldritch.jpg"
+thumb = "./eldritch_thumb.jpg"
+title = "eldritch"
 materials = "acrylic on canvas panel"
 size = "9x12"
 
 [[items]]
-image = "./ iboga.jpg"
-thumb = "./ iboga_thumb.jpg"
-title = " iboga"
+image = "./iboga.jpg"
+thumb = "./iboga_thumb.jpg"
+title = "iboga"
 materials = "acrylic on canvas panel"
 size = "11x14"
 
 [[items]]
-image = "./ emerge.jpg"
-thumb = "./ emerge_thumb.jpg"
-title = " emerge"
+image = "./emerge.jpg"
+thumb = "./emerge_thumb.jpg"
+title = "emerge"
 materials = "acrylic on canvas"
 size = "16x20"
 
 [[items]]
-image = "./ caduceus.jpg"
-thumb = "./ caduceus_thumb.jpg"
-title = " caduceus"
-materials = "acrylic on canvas"
-size = "16x20"
-
-[[items]]
-image = "./ lotus.jpg"
-thumb = "./ lotus_thumb.jpg"
+image = "./lotus.jpg"
+thumb = "./lotus_thumb.jpg"
 title = " lotus"
 materials = "watercolor on paper"
 size = "9x12"
 
 [[items]]
-image = "./ cradle.jpg"
-thumb = "./ cradle_thumb.jpg"
+image = "./cradle.jpg"
+thumb = "./cradle_thumb.jpg"
 title = " cradle"
 materials = "ink on paper"
 size = "5x8"
 
 [[items]]
-image = "./ illithid.jpg"
-thumb = "./ illithid_thumb.jpg"
+image = "./illithid.jpg"
+thumb = "./illithid_thumb.jpg"
 title = " illithid"
 materials = "ink on paper"
 size = "9x12"

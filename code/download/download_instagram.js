@@ -79,7 +79,7 @@ var timer = function (ms) { return new Promise(function (res) { return setTimeou
                 }); }); });
                 userFeed = ig.feed.user(loggedInUser.pk);
                 //console.log("waiting after getting user", userFeed);
-                return [4 /*yield*/, timer(250)];
+                return [4 /*yield*/, timer(25)];
             case 3:
                 //console.log("waiting after getting user", userFeed);
                 _a.sent();
@@ -95,7 +95,7 @@ var timer = function (ms) { return new Promise(function (res) { return setTimeou
                                     if (!(_i < items_1.length)) return [3 /*break*/, 10];
                                     item = items_1[_i];
                                     //console.log("waiting before getting item", item);
-                                    return [4 /*yield*/, timer(250)];
+                                    return [4 /*yield*/, timer(25)];
                                 case 2:
                                     //console.log("waiting before getting item", item);
                                     _a.sent();
@@ -107,7 +107,7 @@ var timer = function (ms) { return new Promise(function (res) { return setTimeou
                                         return [3 /*break*/, 9];
                                     }
                                     //console.log("waiting before getting comment", info);
-                                    return [4 /*yield*/, timer(250)];
+                                    return [4 /*yield*/, timer(25)];
                                 case 4:
                                     //console.log("waiting before getting comment", info);
                                     _a.sent();
@@ -116,7 +116,7 @@ var timer = function (ms) { return new Promise(function (res) { return setTimeou
                                     comments = _a.sent();
                                     // console.log(comments);
                                     //console.log("waiting after getting comments", comments);
-                                    return [4 /*yield*/, timer(250)];
+                                    return [4 /*yield*/, timer(25)];
                                 case 6:
                                     // console.log(comments);
                                     //console.log("waiting after getting comments", comments);
@@ -195,6 +195,7 @@ function getImageData(comments) {
             continue;
         }
         if (data != null && data.title != "" && data.title != undefined) {
+            data.title = data.title.trim();
             // console.log("returned", data.title);
             return data;
         }
