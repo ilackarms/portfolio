@@ -1,4 +1,5 @@
 import {IgApiClient} from 'instagram-private-api';
+import {UserFeedResponseItemsItem} from "instagram-private-api/dist/responses";
 
 const fs = require('fs');
 const wget = require('node-wget-promise');
@@ -12,6 +13,7 @@ ig.state.generateDevice(process.env.IG_USERNAME);
 // Optionally you can setup proxy url
 ig.state.proxyUrl = process.env.IG_PROXY;
 
+const timer = ms => new Promise(res => setTimeout(res, ms));
 
 (async () => {
     console.log("start");
@@ -33,29 +35,61 @@ ig.state.proxyUrl = process.env.IG_PROXY;
     // Create UserFeed instance to get loggedInUser's posts
     const userFeed = ig.feed.user(loggedInUser.pk);
 
-    const myPostsFirstPage = await userFeed.items();
+    //console.log("waiting after getting user", userFeed);
+    await timer(25);
 
-    for (let item of myPostsFirstPage) {
-        const info = await ig.media.info(item.id);
-        let post = info.items[0];
+    let handleItems = async function (items: UserFeedResponseItemsItem[]) {
+        for (let item of items) {
 
-        let data = getImageData(post.preview_comments);
 
-        if (data == null || typeof data === "string") {
-            continue
+            //console.log("waiting before getting item", item);
+            await timer(25);
+            const info = await ig.media.info(item.id);
+            let post = info.items[0];
+
+            if (post === undefined || post.image_versions2 === undefined) {
+                continue
+            }
+            //console.log("waiting before getting comment", info);
+            await timer(25);
+
+            let comments = await ig.feed.mediaComments(item.id).items();
+            // console.log(comments);
+            //console.log("waiting after getting comments", comments);
+            await timer(25);
+
+            let data = getImageData(comments);
+
+            if (data == null || typeof data === "string") {
+                continue
+            }
+
+            console.log("data:", data);
+
+            await wget(post.image_versions2.candidates[0].url, {
+                output: "static/" + dir + "/" + data.title + ".jpg"
+            });
+
+            await wget(post.image_versions2.candidates[1].url, {
+                output: "static/" + dir + "/" + data.title + "_thumb.jpg"
+            });
+
+            images.push(data)
         }
 
-        console.log("data:", data);
+    };
 
-        await wget(post.image_versions2.candidates[0].url, {
-            output: "static/" + dir + "/" + data.title + ".jpg"
-        });
 
-        await wget(post.image_versions2.candidates[1].url, {
-            output: "static/" + dir + "/" + data.title + "_thumb.jpg"
-        });
+    let items = await userFeed.items();
 
-        images.push(data)
+    while (items != undefined) {
+        try {
+            await handleItems(items);
+            items = await userFeed.items();
+        } catch (e) {
+            break;
+        }
+        // break;
     }
 
     let tomlFile = `[[params]]
@@ -91,6 +125,7 @@ function getImageData(comments: any[]): ImageData {
     console.log("comments: ", comments.length);
     for (let comment of comments) {
         let data: ImageData;
+        console.log("trying text:", comment.text);
         try {
             // console.log("comments: ", comment.text);
             data = YAML.parse(comment.text)
@@ -98,11 +133,13 @@ function getImageData(comments: any[]): ImageData {
             // console.log("caught");
             continue
         }
-        if (data.title != "" && data.title != undefined) {
+
+        if (data != null && data.title != "" && data.title != undefined) {
+            data.title = data.title.trim();
             // console.log("returned", data.title);
             return data
         }
-            // console.log("continue");
+        // console.log("continue");
     }
     return null
 }

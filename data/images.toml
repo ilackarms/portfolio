@@ -37,8 +37,134 @@ materials = "acrylic on canvas"
 size = "8x8"
 
 [[items]]
+image = "./witness.jpg"
+thumb = "./witness_thumb.jpg"
+title = "witness"
+materials = "acrylic on canvas panel"
+size = "11x14"
+
+[[items]]
 image = "./earth.jpg"
 thumb = "./earth_thumb.jpg"
 title = "earth"
 materials = "acrylic on canvas panel"
 size = "18x24"
+
+[[items]]
+image = "./orb.jpg"
+thumb = "./orb_thumb.jpg"
+title = "orb"
+materials = "acrylic on canvas panel"
+size = "11x14"
+
+[[items]]
+image = "./melt.jpg"
+thumb = "./melt_thumb.jpg"
+title = "melt"
+materials = "acrylic on canvas panel"
+size = "9x12"
+
+[[items]]
+image = "./vision.jpg"
+thumb = "./vision_thumb.jpg"
+title = "vision"
+materials = "acrylic on canvas panel"
+size = "9x12"
+
+[[items]]
+image = "./warp.jpg"
+thumb = "./warp_thumb.jpg"
+title = "warp"
+materials = "acrylic on canvas panel"
+size = "9x12"
+
+[[items]]
+image = "./proxima.jpg"
+thumb = "./proxima_thumb.jpg"
+title = "proxima"
+materials = "acrylic on illustration board"
+size = "9x12"
+
+[[items]]
+image = "./blow.jpg"
+thumb = "./blow_thumb.jpg"
+title = "blow"
+materials = "pastel on paper"
+size = "9x12"
+
+[[items]]
+image = "./digitzed.jpg"
+thumb = "./digitzed_thumb.jpg"
+title = "digitzed"
+materials = "ink on paper"
+size = "9x12"
+
+[[items]]
+image = "./plume.jpg"
+thumb = "./plume_thumb.jpg"
+title = "plume"
+materials = "acrylic on paper"
+size = "9x12"
+
+[[items]]
+image = "./fugue.jpg"
+thumb = "./fugue_thumb.jpg"
+title = "fugue"
+materials = "acrylic on paper"
+size = "9x12"
+
+[[items]]
+image = "./arcane.jpg"
+thumb = "./arcane_thumb.jpg"
+title = "arcane"
+materials = "acrylic on illustration board"
+size = "9x12"
+
+[[items]]
+image = "./ eldritch.jpg"
+thumb = "./ eldritch_thumb.jpg"
+title = " eldritch"
+materials = "acrylic on canvas panel"
+size = "9x12"
+
+[[items]]
+image = "./ iboga.jpg"
+thumb = "./ iboga_thumb.jpg"
+title = " iboga"
+materials = "acrylic on canvas panel"
+size = "11x14"
+
+[[items]]
+image = "./ emerge.jpg"
+thumb = "./ emerge_thumb.jpg"
+title = " emerge"
+materials = "acrylic on canvas"
+size = "16x20"
+
+[[items]]
+image = "./ caduceus.jpg"
+thumb = "./ caduceus_thumb.jpg"
+title = " caduceus"
+materials = "acrylic on canvas"
+size = "16x20"
+
+[[items]]
+image = "./ lotus.jpg"
+thumb = "./ lotus_thumb.jpg"
+title = " lotus"
+materials = "watercolor on paper"
+size = "9x12"
+
+[[items]]
+image = "./ cradle.jpg"
+thumb = "./ cradle_thumb.jpg"
+title = " cradle"
+materials = "ink on paper"
+size = "5x8"
+
+[[items]]
+image = "./ illithid.jpg"
+thumb = "./ illithid_thumb.jpg"
+title = " illithid"
+materials = "ink on paper"
+size = "9x12"
