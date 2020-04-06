@@ -46,6 +46,10 @@ googleAnalytics = "UA-93692420-2"
   url = "about/"
 
   [[params.navlinks]]
+  name = "Shop"
+  url = "https://www.etsy.com/shop/acrylicmelt/"
+
+  [[params.navlinks]]
   name = "Contact"
   url = "contact/"
 
