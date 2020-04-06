@@ -2,6 +2,118 @@
 title = "Gallery"
 
 [[items]]
+image = "./eye in the sky.jpg"
+thumb = "./eye in the sky_thumb.jpg"
+title = "eye in the sky"
+materials = "acrylic on canvas"
+size = "9x12"
+
+[[items]]
+image = "./people of the sun.jpg"
+thumb = "./people of the sun_thumb.jpg"
+title = "people of the sun"
+materials = "acrylic on watercolor paper"
+size = "9x12"
+
+[[items]]
+image = "./fire in the head.jpg"
+thumb = "./fire in the head_thumb.jpg"
+title = "fire in the head"
+materials = "acrylic on watercolor paper"
+size = "9x12"
+
+[[items]]
+image = "./pear.jpg"
+thumb = "./pear_thumb.jpg"
+title = "pear"
+materials = "acrylic on watercolor paper"
+size = "9x12"
+
+[[items]]
+image = "./pears.jpg"
+thumb = "./pears_thumb.jpg"
+title = "pears"
+materials = "acrylic on watercolor paper"
+size = "9x12"
+
+[[items]]
+image = "./miasma.jpg"
+thumb = "./miasma_thumb.jpg"
+title = "miasma"
+materials = "acrylic on canvas"
+size = "11x14"
+
+[[items]]
+image = "./quarantineworld.jpg"
+thumb = "./quarantineworld_thumb.jpg"
+title = "quarantineworld"
+materials = "acrylic on canvas panel"
+size = "9x12"
+
+[[items]]
+image = "./a glimpse of something real.jpg"
+thumb = "./a glimpse of something real_thumb.jpg"
+title = "a glimpse of something real"
+materials = "acrylic on canvas"
+size = "18x24"
+
+[[items]]
+image = "./shimmer.jpg"
+thumb = "./shimmer_thumb.jpg"
+title = "shimmer"
+materials = "acrylic on canvas"
+size = "12x16"
+
+[[items]]
+image = "./shape and structure.jpg"
+thumb = "./shape and structure_thumb.jpg"
+title = "shape and structure"
+materials = "acrylic on canvas"
+size = "11x14"
+
+[[items]]
+image = "./sigh.jpg"
+thumb = "./sigh_thumb.jpg"
+title = "sigh"
+materials = "acrylic on canvas"
+size = "11x14"
+
+[[items]]
+image = "./heart of fire.jpg"
+thumb = "./heart of fire_thumb.jpg"
+title = "heart of fire"
+materials = "acrylic on canvas"
+size = "11x14"
+
+[[items]]
+image = "./katanathought.jpg"
+thumb = "./katanathought_thumb.jpg"
+title = "katanathought"
+materials = "acrylic on canvas"
+size = "11x14"
+
+[[items]]
+image = "./belladonna.jpg"
+thumb = "./belladonna_thumb.jpg"
+title = "belladonna"
+materials = "acrylic on canvas"
+size = "11x14"
+
+[[items]]
+image = "./choices.jpg"
+thumb = "./choices_thumb.jpg"
+title = "choices"
+materials = "acrylic on canvas"
+size = "11x14"
+
+[[items]]
+image = "./for daisy.jpg"
+thumb = "./for daisy_thumb.jpg"
+title = "for daisy"
+materials = "acrylic on canvas"
+size = "11x14"
+
+[[items]]
 image = "./flume.jpg"
 thumb = "./flume_thumb.jpg"
 title = "flume"
@@ -142,22 +254,29 @@ materials = "acrylic on canvas"
 size = "16x20"
 
 [[items]]
+image = "./caduceus.jpg"
+thumb = "./caduceus_thumb.jpg"
+title = "caduceus"
+materials = "acrylic on canvas"
+size = "16x20"
+
+[[items]]
 image = "./lotus.jpg"
 thumb = "./lotus_thumb.jpg"
-title = " lotus"
+title = "lotus"
 materials = "watercolor on paper"
 size = "9x12"
 
 [[items]]
 image = "./cradle.jpg"
 thumb = "./cradle_thumb.jpg"
-title = " cradle"
+title = "cradle"
 materials = "ink on paper"
 size = "5x8"
 
 [[items]]
 image = "./illithid.jpg"
 thumb = "./illithid_thumb.jpg"
-title = " illithid"
+title = "illithid"
 materials = "ink on paper"
 size = "9x12"
