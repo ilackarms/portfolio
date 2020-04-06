@@ -48,16 +48,38 @@ ig.state.generateDevice(process.env.IG_USERNAME);
 // Optionally you can setup proxy url
 ig.state.proxyUrl = process.env.IG_PROXY;
 var timer = function (ms) { return new Promise(function (res) { return setTimeout(res, ms); }); };
+function wait(ms) {
+    var _this = this;
+    (function () { return __awaiter(_this, void 0, void 0, function () {
+        var e_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, timer(ms)];
+                case 1:
+                    _a.sent();
+                    return [3 /*break*/, 3];
+                case 2:
+                    e_1 = _a.sent();
+                    console.log('Error caught', e_1);
+                    return [3 /*break*/, 3];
+                case 3: return [2 /*return*/];
+            }
+        });
+    }); })();
+}
 (function () { return __awaiter(void 0, void 0, void 0, function () {
-    var images, dir, loggedInUser, userFeed, handleItems, items, e_1, tomlFile, _i, images_1, image;
+    var images_2, dir_1, loggedInUser, userFeed, handleItems, items, e_2, tomlFile, _i, images_1, image, e_3;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
+                _a.trys.push([0, 11, , 12]);
                 console.log("start");
-                images = [];
-                dir = process.argv[2];
-                if (dir === undefined) {
-                    dir = ".";
+                images_2 = [];
+                dir_1 = process.argv[2];
+                if (dir_1 === undefined) {
+                    dir_1 = ".";
                 }
                 // Execute all requests prior to authorization in the real Android application
                 // Not required but recommended
@@ -79,10 +101,7 @@ var timer = function (ms) { return new Promise(function (res) { return setTimeou
                 }); }); });
                 userFeed = ig.feed.user(loggedInUser.pk);
                 //console.log("waiting after getting user", userFeed);
-                return [4 /*yield*/, timer(25)];
-            case 3:
-                //console.log("waiting after getting user", userFeed);
-                _a.sent();
+                wait(25);
                 handleItems = function (items) {
                     return __awaiter(this, void 0, void 0, function () {
                         var _i, items_1, item, info, post, comments, data;
@@ -92,91 +111,86 @@ var timer = function (ms) { return new Promise(function (res) { return setTimeou
                                     _i = 0, items_1 = items;
                                     _a.label = 1;
                                 case 1:
-                                    if (!(_i < items_1.length)) return [3 /*break*/, 10];
+                                    if (!(_i < items_1.length)) return [3 /*break*/, 7];
                                     item = items_1[_i];
                                     //console.log("waiting before getting item", item);
-                                    return [4 /*yield*/, timer(25)];
-                                case 2:
-                                    //console.log("waiting before getting item", item);
-                                    _a.sent();
+                                    wait(25);
                                     return [4 /*yield*/, ig.media.info(item.id)];
-                                case 3:
+                                case 2:
                                     info = _a.sent();
                                     post = info.items[0];
                                     if (post === undefined || post.image_versions2 === undefined) {
-                                        return [3 /*break*/, 9];
+                                        return [3 /*break*/, 6];
                                     }
                                     //console.log("waiting before getting comment", info);
-                                    return [4 /*yield*/, timer(25)];
-                                case 4:
-                                    //console.log("waiting before getting comment", info);
-                                    _a.sent();
+                                    wait(25);
                                     return [4 /*yield*/, ig.feed.mediaComments(item.id).items()];
-                                case 5:
+                                case 3:
                                     comments = _a.sent();
                                     // console.log(comments);
                                     //console.log("waiting after getting comments", comments);
-                                    return [4 /*yield*/, timer(25)];
-                                case 6:
-                                    // console.log(comments);
-                                    //console.log("waiting after getting comments", comments);
-                                    _a.sent();
+                                    wait(25);
                                     data = getImageData(comments);
                                     if (data == null || typeof data === "string") {
-                                        return [3 /*break*/, 9];
+                                        return [3 /*break*/, 6];
                                     }
                                     console.log("data:", data);
                                     return [4 /*yield*/, wget(post.image_versions2.candidates[0].url, {
-                                            output: "static/" + dir + "/" + data.title + ".jpg"
+                                            output: "static/" + dir_1 + "/" + data.title + ".jpg"
                                         })];
-                                case 7:
+                                case 4:
                                     _a.sent();
                                     return [4 /*yield*/, wget(post.image_versions2.candidates[1].url, {
-                                            output: "static/" + dir + "/" + data.title + "_thumb.jpg"
+                                            output: "static/" + dir_1 + "/" + data.title + "_thumb.jpg"
                                         })];
-                                case 8:
+                                case 5:
                                     _a.sent();
-                                    images.push(data);
-                                    _a.label = 9;
-                                case 9:
+                                    images_2.push(data);
+                                    _a.label = 6;
+                                case 6:
                                     _i++;
                                     return [3 /*break*/, 1];
-                                case 10: return [2 /*return*/];
+                                case 7: return [2 /*return*/];
                             }
                         });
                     });
                 };
                 return [4 /*yield*/, userFeed.items()];
-            case 4:
+            case 3:
                 items = _a.sent();
+                _a.label = 4;
+            case 4:
+                if (!(items != undefined)) return [3 /*break*/, 10];
                 _a.label = 5;
             case 5:
-                if (!(items != undefined)) return [3 /*break*/, 11];
-                _a.label = 6;
-            case 6:
-                _a.trys.push([6, 9, , 10]);
+                _a.trys.push([5, 8, , 9]);
                 return [4 /*yield*/, handleItems(items)];
-            case 7:
+            case 6:
                 _a.sent();
                 return [4 /*yield*/, userFeed.items()];
-            case 8:
+            case 7:
                 items = _a.sent();
+                return [3 /*break*/, 9];
+            case 8:
+                e_2 = _a.sent();
                 return [3 /*break*/, 10];
-            case 9:
-                e_1 = _a.sent();
-                return [3 /*break*/, 11];
-            case 10: return [3 /*break*/, 5];
-            case 11:
+            case 9: return [3 /*break*/, 4];
+            case 10:
                 tomlFile = "[[params]]\ntitle = \"Gallery\"\n";
                 // temp fix:
-                dir = ".";
-                for (_i = 0, images_1 = images; _i < images_1.length; _i++) {
+                dir_1 = ".";
+                for (_i = 0, images_1 = images_2; _i < images_1.length; _i++) {
                     image = images_1[_i];
                     tomlFile +=
-                        "\n[[items]]\nimage = \"" + dir + "/" + image.title + ".jpg\"\nthumb = \"" + dir + "/" + image.title + "_thumb.jpg\"\ntitle = \"" + image.title + "\"\nmaterials = \"" + image.materials + "\"\nsize = \"" + image.size + "\"\n";
+                        "\n[[items]]\nimage = \"" + dir_1 + "/" + image.title + ".jpg\"\nthumb = \"" + dir_1 + "/" + image.title + "_thumb.jpg\"\ntitle = \"" + image.title + "\"\nmaterials = \"" + image.materials + "\"\nsize = \"" + image.size + "\"\n";
                 }
                 fs.writeFileSync("data/images.toml", tomlFile);
-                return [2 /*return*/];
+                return [3 /*break*/, 12];
+            case 11:
+                e_3 = _a.sent();
+                console.log("error!", e_3);
+                return [3 /*break*/, 12];
+            case 12: return [2 /*return*/];
         }
     });
 }); })();

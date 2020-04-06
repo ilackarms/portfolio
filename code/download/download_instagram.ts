@@ -15,7 +15,19 @@ ig.state.proxyUrl = process.env.IG_PROXY;
 
 const timer = ms => new Promise(res => setTimeout(res, ms));
 
+function wait(ms: number) {
+    (async () => {
+        try {
+            await timer(ms);
+        } catch (e) {
+            console.log('Error caught', e);
+        }
+    })()
+}
+
 (async () => {
+    try {
+
     console.log("start");
 
     let images = [];
@@ -36,14 +48,14 @@ const timer = ms => new Promise(res => setTimeout(res, ms));
     const userFeed = ig.feed.user(loggedInUser.pk);
 
     //console.log("waiting after getting user", userFeed);
-    await timer(25);
+    wait(25);
 
     let handleItems = async function (items: UserFeedResponseItemsItem[]) {
         for (let item of items) {
 
 
             //console.log("waiting before getting item", item);
-            await timer(25);
+            wait(25);
             const info = await ig.media.info(item.id);
             let post = info.items[0];
 
@@ -51,12 +63,12 @@ const timer = ms => new Promise(res => setTimeout(res, ms));
                 continue
             }
             //console.log("waiting before getting comment", info);
-            await timer(25);
+            wait(25);
 
             let comments = await ig.feed.mediaComments(item.id).items();
             // console.log(comments);
             //console.log("waiting after getting comments", comments);
-            await timer(25);
+            wait(25);
 
             let data = getImageData(comments);
 
@@ -113,6 +125,9 @@ size = "` + image.size + `"
 
     fs.writeFileSync("data/images.toml", tomlFile)
 
+    } catch (e) {
+        console.log("error!", e)
+    }
 })();
 
 interface ImageData {
