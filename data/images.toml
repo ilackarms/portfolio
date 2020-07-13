@@ -2,6 +2,139 @@
 title = "Gallery"
 
 [[items]]
+image = "./effervescent lunge.jpg"
+thumb = "./effervescent lunge_thumb.jpg"
+title = "effervescent lunge"
+materials = "oil on gessoed paper"
+size = "6x8"
+
+[[items]]
+image = "./night rose.jpg"
+thumb = "./night rose_thumb.jpg"
+title = "night rose"
+materials = "acrylic on gessoed paper"
+size = "11x14"
+
+[[items]]
+image = "./wisdom of the ancients.jpg"
+thumb = "./wisdom of the ancients_thumb.jpg"
+title = "wisdom of the ancients"
+materials = "oil on gessoed paper"
+size = "6x8"
+
+[[items]]
+image = "./bespoken wonder.jpg"
+thumb = "./bespoken wonder_thumb.jpg"
+title = "bespoken wonder"
+materials = "oil on gessoed paper"
+size = "9x12"
+
+[[items]]
+image = "./talking to yourself.jpg"
+thumb = "./talking to yourself_thumb.jpg"
+title = "talking to yourself"
+materials = "oil on gessoed paper"
+size = "6x8"
+
+[[items]]
+image = "./psychic tutor.jpg"
+thumb = "./psychic tutor_thumb.jpg"
+title = "psychic tutor"
+materials = "acrylic on canvas panel"
+size = "12x18"
+
+[[items]]
+image = "./dreambreathe.jpg"
+thumb = "./dreambreathe_thumb.jpg"
+title = "dreambreathe"
+materials = "acrylic on canvas panel"
+size = "11x14"
+
+[[items]]
+image = "./light and shadow study 1.jpg"
+thumb = "./light and shadow study 1_thumb.jpg"
+title = "light and shadow study 1"
+materials = "acrylic on canvas panel"
+size = "11x14"
+
+[[items]]
+image = "./mind your thoughts.jpg"
+thumb = "./mind your thoughts_thumb.jpg"
+title = "mind your thoughts"
+materials = "acrylic on watercolor paper"
+size = "11x14"
+
+[[items]]
+image = "./landscape 1.jpg"
+thumb = "./landscape 1_thumb.jpg"
+title = "landscape 1"
+materials = "acrylic on canvas panel"
+size = "9x12"
+
+[[items]]
+image = "./cityscape 3.jpg"
+thumb = "./cityscape 3_thumb.jpg"
+title = "cityscape 3"
+materials = "acrylic on gallery canvas"
+size = "12x18"
+
+[[items]]
+image = "./flowers 1.jpg"
+thumb = "./flowers 1_thumb.jpg"
+title = "flowers 1"
+materials = "acrylic on gessoed paper"
+size = "9x12"
+
+[[items]]
+image = "./egg out of time.jpg"
+thumb = "./egg out of time_thumb.jpg"
+title = "egg out of time"
+materials = "acrylic on canvas"
+size = "12x18"
+
+[[items]]
+image = "./search for the lost.jpg"
+thumb = "./search for the lost_thumb.jpg"
+title = "search for the lost"
+materials = "acrylic on gessoed cardboard"
+size = "11x14"
+
+[[items]]
+image = "./cityscape 2.jpg"
+thumb = "./cityscape 2_thumb.jpg"
+title = "cityscape 2"
+materials = "acrylic on watercolor paper"
+size = "9x12"
+
+[[items]]
+image = "./cityscape 1.jpg"
+thumb = "./cityscape 1_thumb.jpg"
+title = "cityscape 1"
+materials = "acrylic on canvas panel"
+size = "11x14"
+
+[[items]]
+image = "./ziggurat.jpg"
+thumb = "./ziggurat_thumb.jpg"
+title = "ziggurat"
+materials = "acrylic + gesso on paper"
+size = "9x12"
+
+[[items]]
+image = "./haze.jpg"
+thumb = "./haze_thumb.jpg"
+title = "haze"
+materials = "acrylic + gesso on paper"
+size = "9x12"
+
+[[items]]
+image = "./book of secrets.jpg"
+thumb = "./book of secrets_thumb.jpg"
+title = "book of secrets"
+materials = "acrylic + gesso on paper"
+size = "9x12"
+
+[[items]]
 image = "./eye in the sky.jpg"
 thumb = "./eye in the sky_thumb.jpg"
 title = "eye in the sky"
